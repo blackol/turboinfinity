@@ -7,3 +7,5 @@
 Toujours contenir vôtre html dans une div et laissez un espace entre votre code et celui des autres
 
 Pour le css et le js n'oublier de separer votre code dans le fichiers en indiquant votre nom,prenom ou pseudo .
+
+Pour éviter les conflis n'hesiter pas à crée vôtre branche git.
