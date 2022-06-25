@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Git Cheatsheet</title>
+        <link rel="stylesheet" href="https://stackedit.io/style.css" />
+    </head>
+
+    <body class="stackedit">
+        <div class="stackedit__html">
+            <h1>Github Cheatsheet</h1>
+            <h2>Méthodes de travail collaboratives sur Github</h2>
+            
+            <h3>Feature Branch</h3>
+            <p>Feature Branch (branche par fonctionnalité) est une pratique de développement flexible permettant à un développeur de travailler sur plusieurs branches simultanément - et même à plusieurs développeurs de travailler sur la même branche (évite aussi des confusions du type « pourquoi a commit sur la branche de b ?»). Ce qui facilite aussi la gestion des pull requests car une branche appelée add-button-to-home-page est plus explicite qu’une branche appelée bob.</p>
+            
+            <h3>Developer Branch</h3>
+            <p>Une autre pratique qui consiste à créer une branche par développeur, sur laquelle vous pousserez votre code pour les différentes pages/fonctionnalités sur lesquelles vous travaillez. A l’avantage d’être simple d’utilisation car ne nécessite pas de changer de branche régulièrement.</p>
+
+            <h3>Issues</h3>
+            <p>
+                Une issue peut être considérée comme une tâche à effectuer ultérieurement. Une issue contient, un titre, une description, vous pouvez également y ajouter des liens et des images. 
+                Dans le cas du développement collaboratif les issues sont utiles pour préparer les fonctionnalités à implémenter ou des bugs à fix. Une issue peut être assignée à un ou plusieurs développeurs. 
+                Dans un message de commit vous pouvez faire référence à une issue en précisant son id. 
+            </p>
+            <pre>Message faisant référence à l'issue #10 :<code>git commit -m "#10 message"</code></pre>
+            <p>De plus, lorsque vous utilisez certains mots clés dans vos messages de commit contenant
+                également l'id de l'issue, vous pouvez effectuer certaines actions comme fermer une issue en cours.
+            </p>
+            <pre>Ce message va automatiquement fermer l'issue #10 :<code>git commit -m "Fixes #10"</code></pre>
+
+            <img src="https://guides.github.com/features/issues/labels-listing.png" alt="">
+
+            <h3>Pull Requests</h3>
+            <p>
+                Une fois que vous estimez avoir fini votre travail, il faut alors l’ajouter à la branche principale master qui contient le code fonctionnel de l’application. 
+                Pour éviter les bugs, avant d’ajouter du code au master il faut ouvrir une pull request. Une comparaison sera faite des différents fichiers sur le master à ceux que vous avez modifiés/ajoutés/supprimés.
+                Le code est ensuite vérifié par un (ou plusieurs) autre développeur qui donnera son feu vert pour l’ajouter au master. 
+            </p>
+            <img src="https://thumbs.gfycat.com/ElaborateDearestHermitcrab-size_restricted.gif" alt="">
+
+
+            <h2>Commandes git fréquemment utilisées</h2>
+            <p>Pour cloner ou pousser votre code vers un repository privé vous aurez besoin d’une clé SSH sur votre machine de développement. 
+            </p>
+            <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Générer une clé SSH</a>
+            <br><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account">Ajouter une clé SSH à un compte Github</a>
+            
+            <h4>Initialization</h4>
+            <pre>Initialise un dossier local en tant que dossier git :<code>git init</code></pre>
+
+            <pre>Récupérer en local un repository git via une URL. :<code>git clone url </code></pre>
+
+            <h4>Pousser son code</h4>
+            <p>Ces étapes sont à exécuter dans cet ordre pour pousser votre code sur le repository distant.</p>
+            <pre>Ajouter tous les fichiers au prochain commit :<code>git add .</code></pre>
+            <p>ou</p>
+            <pre>Ajouter uniquement les fichiers modifiés au prochain commit :<code>git add -u</code></pre>
+            <pre>Commit les derniers changements trackés :<code>git commit -m "message descriptif"</code></pre>
+            <pre>Publier les changements locaux sur le repository distant :<code>git push</code></pre>
+            
+            <h4>Branches</h4>
+            <p>Les branches permettent de coder de votre côté sans perturber le master qui est la branche principale du projet, elle ne doit contenir que du code fonctionnel. En fonction de la méthode choisie, vous aurez plus ou moins souvent besoin de créer un changer fréquemment de branche.
+            </p>
+
+            <pre>Liste les branches existantes :<code>git branch</code></pre>
+            <pre>Se placer sur une branche existante :<code>git checkout nom-de-la-branche</code></pre>
+            <pre>Créer une nouvelle branche et se placer dessus :<code>git checkout -b nom-de-la-branche</code></pre>
+
+            <p>Dans le cas où vous avez besoin de changer régulièrement de branche, vous aurez parfois des modifications en cours sur la branche actuelle qui n’ont pas été commit, ce qui vous empêchera de changer de branche. Dans ce cas, vous pouvez stocker vos modifications temporairement dans un stash.
+            </p>
+
+            <pre>Stocker les changements de la branche actuelle dans un stash :<code>git stash</code></pre>
+            <pre>Afficher la liste des stash disponibles :<code>git stash list</code></pre>
+            <pre>Récupérer et appliquer les données du dernier stash à la branche actuelle, <br>
+vous pouvez également préciser l’id ou le nom du stash (ex: git stash pop stash@{3}) :<code>git stash pop</code></pre>
+            <pre>Afficher les données d’un stash :<code>git stash show stash@{0}</code></pre>
+            <h5>Merge Branches</h5>
+            <p>
+                Une fois votre travail terminé sur votre branche et la Pull Request validé, vous aurez besoin d'importer
+                le code du master (ou d'une autre branche) mis à jour sur votre branche en local. 
+            </p>
+            <pre>Pour importer en local le code d'une branche distante spécifique <br>("origin" fait référence au repo distant à partir duquel un projet a été cloné) :<code>git pull origin branche</code></pre>
+            <p>
+                Il existe aussi des options avec des interfaces graphiques (ex: GitKraken) qui facilitent
+                le merge de code entre différentes branches et la gestion de conflits éventuels. A privilégier
+                si vous n'êtes pas à l'aise avec git ou le terminal.
+            </p>
+
+
+
+
+
+        </div>
+        
+    </body>
+</html>
