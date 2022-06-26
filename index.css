@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 /*font-family: 'Rubik', sans-serif;*/
 
-/*============= base du dtyle ================*/
+/*============= base du style ================*/
 
 * {
   margin: 0;
@@ -43,4 +43,16 @@ p{
 ul{
   list-style: none;
 }
-/*============= base du dtyle ================*/
+
+.v-clair {
+  background-color: #c4d79b;
+}
+
+.v-fonce {
+  background-color: #4f6228;
+}
+
+.bleu {
+  background-color: #DCE6F1;
+}
+/*============= base du style ================*/
