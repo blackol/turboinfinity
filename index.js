@@ -60,12 +60,9 @@ for (var j = 0; j < 15; j++) {
     //première cellule
     if (i == 0) {
         createSelect(td);
-        if (j == 14) {
-            td.style = 'width: 10%;border: 1px solid black;border-bottom: 2px solid black;';
-        }
     }else if (i == 4) {//5ème cellule avec bords gras
         if (j ==14) {
-            td.style = 'width: 10%;border:1px solid black;border-left: 2px solid black;border-bottom: 3px solid black;';
+            td.style = 'width: 10%;border:1px solid black;border-left: 2px solid black;border-bottom: 2px solid black;';
         
         }else {
             td.style = 'width: 10%;border: 1px solid black;border-left: 2px solid black;';
@@ -77,7 +74,7 @@ for (var j = 0; j < 15; j++) {
     }
     else if (i ==5) {
         if (j ==14) {
-            td.style = 'width: 10%;border: 1px solid black;border-bottom: 3px solid black;';
+            td.style = 'width: 10%;border: 1px solid black;border-bottom: 2px solid black;';
         
         }else {
             td.style = 'width: 10%;border: 1px solid black;';
@@ -89,7 +86,7 @@ for (var j = 0; j < 15; j++) {
     }
     else if (i == 6) {
         if (j ==14) {
-            td.style = 'width: 10%;border: 1px solid black;border-bottom: 3px solid black;border-right: 2px solid black;';
+            td.style = 'width: 10%;border: 1px solid black;border-bottom: 2px solid black;border-right: 2px solid black;';
         
         }else {
             td.style = 'width: 10%;border: 1px solid black;border-right: 2px solid black;';
@@ -118,19 +115,12 @@ for (var j = 0; j < 15; j++) {
         td.appendChild(input);
     }
     else if (i == 10) {
-        if (j == 14) {
-            td.style = 'width: 13%;border: 1px solid black;border-left:2px solid black;border-bottom: 2px solid black;';
-        } else {
-            td.style = 'width: 13%;border: 1px solid black;border-left:2px solid black';
-        }
+        td.style = 'width: 13%;border: 1px solid black;border-left:2px solid black';
         var input = document.createElement('input');
         input.style = "width: 100%;border: none;";
         td.appendChild(input);
     }
     else if (i == 11) {
-        if (j == 14) {
-            td.style = 'width: 10%;border: 1px solid black;border-bottom: 2px solid black;';
-        }
         td.className = 'bleu';
         var input = document.createElement('input');
         input.style = "width: 100%;border: none;";
@@ -139,9 +129,6 @@ for (var j = 0; j < 15; j++) {
         
     }
     else {
-        if(j == 14){
-            td.style = 'width: 10%;border: 1px solid black;border-bottom: 2px solid black;';
-        }
         var input = document.createElement('input');
         input.style = "width: 100%;border: none;";
         td.appendChild(input);
@@ -150,5 +137,43 @@ for (var j = 0; j < 15; j++) {
   }
   document.querySelector("#master").appendChild(table);
 }
+
+var foot = document.createElement('div');
+foot.className = "d-flex";
+
+
+for (var i=0; i<8; i++){
+    var cell = document.createElement('div');
+    
+    cell.className = "bleu px-1";
+    if (i == 0) {
+        var center = document.createElement('center');
+        var b = document.createElement('b');
+        cell.style = "width: 50.5%;height:26px;border: 1px solid black;border-right:1px solid white;";
+        b.innerHTML = "TOTAUX HETD MASTER";
+        center.appendChild(b);
+        cell.appendChild(center);
+    }else if (i == 5) {
+        cell.className = "bleu px-1 d-flex justify-content-end";
+        var italic = document.createElement('i');
+        italic.innerHTML = "0,00";
+        cell.style = "width: 7.1%;height:26px;border: 1px solid white;border-bottom:1px solid black;";
+        cell.appendChild(italic);
+    }else if(i == 6){
+        cell.style = "width: 13%;height:26px;border: 1px solid black;border-left:1px solid white;";
+    }
+    else if(i < 5){
+        cell.className = "bleu px-1 d-flex justify-content-end";
+        var italic = document.createElement('i');
+        italic.innerHTML = "0";
+        cell.style = "width: 10%;height:26px;border: 1px solid black;border-left:1px solid white;border-right:1px solid white;";
+        cell.appendChild(italic);
+    }
+    else {
+        cell.style = "width: 10%;height:26px;border: 1px solid black;";
+    }
+    foot.appendChild(cell);
+}
+document.querySelector("#master").appendChild(foot);
 
 /*================= Mehdi ====================*/
