@@ -55,7 +55,7 @@ ul {
 }
 
 .v-fonce {
-  background-color: #4f6228;
+  background-color: #4f6228 !important;
 }
 
 .bleu {
