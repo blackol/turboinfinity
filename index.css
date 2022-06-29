@@ -74,3 +74,44 @@ ul {
   margin-left: 15% !important;
 }
 /*============= base du style ================*/
+/*============= kezia ================*/
+
+body {
+    padding: 20px;
+    font: 1em Helvetica Neue, Helvetica, Times, sans-serif;
+  }
+  
+  * {box-sizing: border-box;}
+  
+  h4 { 
+      text-align: center 
+    }
+
+  h5 { 
+    text-align: right
+   }
+
+  .container {
+    width: 100%;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    height: 100%;
+    /*border: 5px solid rgb(111,41,97);*/
+    border-radius: .5em;
+    padding: 10px;
+    align-items: center;
+    margin: 0em;
+    justify-content: space-between;
+  }
+  
+  .column {
+    flex-direction: space-between;
+  }
+  
+  .item {
+    padding: 10px;
+    background-color: rgba(41, 111, 69, 0.3);
+    border: 2px solid rgba(41, 111, 47, 0.5);
+  }
+
+  /*============= kezia ================*/
