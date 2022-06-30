@@ -116,6 +116,19 @@ body {
 
   /*============= kezia ================*/
   /*============= Cédric ================*/
+  .container2 {
+    width: 100%;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    height: 100%;
+    /*border: 5px solid rgb(111,41,97);*/
+    border-radius: .5em;
+    padding: 10px;
+    align-items: center;
+    margin: 0em;
+    justify-content: space-between;
+  }
+  
   table{
     border-collapse: collapse;
     background-position: center;
