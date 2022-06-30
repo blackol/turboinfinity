@@ -115,3 +115,20 @@ body {
   }
 
   /*============= kezia ================*/
+  /*============= Cédric ================*/
+  table{
+    border-collapse: collapse;
+    background-position: center;
+    width: auto;
+  }
+  td,th{
+    border: 1px solid black;
+    text-align: center;
+    
+  }
+  #ligne{
+    background-color: #c4d79b;
+    color: white;
+    
+  }
+  /*============= Cédric ================*/
