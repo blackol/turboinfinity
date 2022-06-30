@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recherche</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 7px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(196, 215, 155, 255);
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-family: "Roboto", sans-serif;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 2px 2px 5px #333;
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    button {
+      font-size: 1.2rem;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .flexCenter {
+      display: flex;
+      align-items: center;
+    }
+
+    .offscreen {
+      position: absolute;
+      left: -10000px;
+    }
+    .searchForm {
+      background: #c4d79b;
+      border: 5px solid #4f6228;
+      border-radius: 100px;
+      width: 50%;
+      /*max-width: 650px;*/
+      display: flex;
+    }
+
+    .searchText {
+      color: #4f6228;
+      flex-grow: 1;
+      padding: 0.5em 0.75em 0.5em 1.5em;
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+
+    .backgroundButton {
+      background: #4f6228;
+    }
+
+    .searchButton {
+      padding: 0.5em 0.75em 0.5em 0.5em;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: rgba(79, 98, 40, 255);
+    }
+
+    .searchButton:hover,
+    .searchButton:focus {
+      color: #d7f0a2;
+      text-shadow: 2px 2px 2px #333;
+    }
+
+    .box {
+      width: 70%;
+    }
+
+    .minboxmargin {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    .colvil {
+      margin-top: 45px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      input,
+      button {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <body class="flexCenter">
+    <h1>Recherche</h1>
+
+    <form if="searchForm" class="searchForm" role="search">
+      <label class="offscreen" for="searchText"> Entrer votre Recherche </label>
+      <input
+        type="text"
+        id="searchText"
+        class="searchText"
+        placeholder="Recherche..."
+        autocomplete="off"
+        role="searchbox"
+        required
+      />
+      <button class="searchButton">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+    <!----- Printemps Anthony   ------>
+    <div class="card box" style="margin-top: 10px">
+      <h5 class="card-header" style="font-size: 20px">
+        Résultat de la recherche
+      </h5>
+
+      <div class="card-body">
+        <h5 class="card-title" style="font-size: 15px">Liste des matières :</h5>
+
+        <div class="border minboxmargin" id="1">
+          <p class="card-text" style="font-size: 15px">Exemple d'une matière</p>
+          <button
+            class="btn btn-success backgroundButton"
+            style="font-size: 15px"
+          >
+            Ajouter à mon service
+          </button>
+        </div>
+
+        <div class="border minboxmargin" id="2">
+          <p class="card-text" style="font-size: 15px">Exemple d'une matière</p>
+          <button
+            class="btn btn-success backgroundButton"
+            style="font-size: 15px"
+          >
+            Ajouter à mon service
+          </button>
+        </div>
+
+        <div class="border minboxmargin" id="3">
+          <p class="card-text" style="font-size: 15px">Exemple d'une matière</p>
+          <button
+            class="btn btn-success backgroundButton"
+            style="font-size: 15px"
+          >
+            Ajouter à mon service
+          </button>
+        </div>
+      </div>
+
+      <!----- Printemps Anthony   ------>
+
+      <!----- COLVIL Anthony   ------>
+
+      <div class="card-body colvil ">
+        <h5 class="card-title" style="font-size: 20px">Liste des matières :</h5>
+
+        <div class="border minboxmargin" id="1">
+          <p class="card-text" style="font-size: 15px">Exemple d'une matière</p>
+          
+        </div>
+
+        <div class="border minboxmargin" id="2">
+          <p class="card-text" style="font-size: 15px">Exemple d'une matière</p>
+          
+        </div>
+
+        <div class="border minboxmargin" id="3">
+          <p class="card-text" style="font-size: 15px ">Exemple d'une matière</p>
+        </div>
+      </div>
+
+    <!----- COLVIL Anthony   ------>
+  </body>
+</html>
